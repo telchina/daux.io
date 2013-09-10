@@ -125,7 +125,7 @@ if ($homepage && $homepage_url !== '/') {
 	<script>hljs.initHighlightingOnLoad();</script>
 
 	<!-- Navigation -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+	<script src="<?php echo $base_url ?>/js/jquery.min.js"></script>
 	<script src="<?php echo $base_url ?>/js/bootstrap.min.js"></script>
 	<script src="<?php echo $base_url ?>/js/custom.js"></script>
 	<!--[if lt IE 9]>

@@ -221,9 +221,9 @@ if ($homepage && $homepage_url !== '/') {
 
 	<?php } else { ?>
 		<!-- Docs -->
-		<?php if ($options['repo']) { ?>
-			<a href="https://github.com/<?php echo $options['repo']; ?>" target="_blank" id="github-ribbon"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-		<?php } ?>
+		<!-- ?php if ($options['repo']) { ? -->
+			<!-- a href="https://github.com/--><!--?php echo $options['repo']; ?--><!--" target="_blank" id="github-ribbon"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a -->
+		<!-- ?php } ? -->
 		<div class="container-fluid fluid-height wrapper">
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">

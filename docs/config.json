@@ -1,14 +1,15 @@
 {
-	"title": "DAUX.IO",
+	"title": "数字市政软件产品（项目）标准",
 	"tagline": "The Easiest Way To Document Your Project",
 	"docs_path": "docs",
 	"image": "img/app.png",
 	"theme": "navy",
 	"template":"default",
 	"toggle_code": true,
+	"float": false,
 	"date_modified": true,
-	"repo": "justinwalsh/daux.io",
-	"twitter": ["justin_walsh", "todaymade"],
+	"repo": "",
+	"twitter": [],
 	"google_analytics": "UA-12653604-10",
 	"links": {
 		"Download": "https://github.com/justinwalsh/daux.io/archive/master.zip",

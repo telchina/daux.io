@@ -22,6 +22,8 @@ This is a list of sites using Daux.io:
 
 * [Daux.io](http://daux.io)
 * [Munee: Standalone PHP 5.3 Asset Optimisation & Manipulation](http://mun.ee)
+* [ICADMIN: An admin panel powered by CodeIgniter.](http://istocode.com/shared/ic-admin/)
+* [Daux.io in Chinese - Demonstrates muti-language installations](http://daux.emx2.co.uk/)
 
 Do you use Daux.io? Send me a pull request or open an [issue](https://github.com/justinwalsh/daux.io/issues) and I will add you to the list.
 
@@ -31,9 +33,11 @@ Download this repository as a zip, and unpack. Copy the files to a web server th
 
 ## Folders
 
-The generator will look for folders in the `/docs` folder. Add your folders inside the `/docs` folder. This project contains some example folders and files to get you started.
+By default, the generator will look for folders in the `/docs` folder. Add your folders inside the `/docs` folder. This project contains some example folders and files to get you started.
 
 You can nest folders any number of levels to get the exact structure you want. The folder structure will be converted to the nested navigation.
+
+If you'd prefer to keep your docs somewhere else (like outside of the daux.io root directory) you can specify your docs path in the `config.json` file.
 
 ## Files
 
@@ -82,6 +86,17 @@ Change the title bar in the docs
 }
 ```
 
+###Docs Path:
+If you'd prefer to keep your docs outside of the Daux.io directory, you can provide the filepath.
+
+Note: Your `config.json` file will need to remain in `/daux.io/docs`.
+
+```json
+{
+	"docs_path": "../../my_docs"
+}
+```
+
 ###Themes:
 We have 4 built-in Bootstrap themes. To use one of the themes, just set the `theme` option to one of the following:
 
@@ -118,11 +133,19 @@ To create a custom color scheme, set the `theme` property to `custom` and then d
 ```
 
 ###Code Floating:
-By deafult your code blocks will be floated to a column on the right side of your content. To disable this feature, set the `float` property to `false`.
+By default your code blocks will be floated to a column on the right side of your content. To disable this feature, set the `float` property to `false`.
 
 ```json
 {
 	"float": false
+}
+```
+###Toggling Code Blocks
+Some users might wish to hide the code blocks & view just the documentation. By setting the `toggle_code` property to `true`, you can offer a toggle button on the page.
+
+```json
+{
+	"toggle_code": true
 }
 ```
 
@@ -158,6 +181,17 @@ Include custom links in the sidebar.
 }
 ```
 
+###File editor:
+![File editor](https://f.cloud.github.com/assets/1788727/1954191/44358884-81d1-11e3-859d-254b9fb81808.png)
+
+Enable front-end Markdown editor. _Disabled by default_.
+
+```json
+{
+	"file_editor": true
+}
+```
+
 ###Google Analytics:
 This will embed the google analytics tracking code.
 
@@ -173,6 +207,14 @@ This will embed the piwik tracking code.
 ```json
 {
 	"piwik_analytics": "my-url-for-piwik.com"
+}
+```
+
+You can Also give a specific Piwik ID as well.
+
+```json
+{
+	"piwik_analytics_id": "43"
 }
 ```
 
@@ -203,7 +245,7 @@ By default, daux.io will display the last modified time as reported by the syste
 ```json
 {
 	"date_modified": false
-} 
+}
 ```
 
 ###Timezone
@@ -213,6 +255,37 @@ If your server does not have a default timezone set in php.ini, it may return er
 {
         "timezone": "America/Los_Angeles"
 }
+```
+
+###Multi-language
+Enables multi-language support which needs seperate directories for each language in `docs/` folder.
+
+```json
+{
+        "languages": { "en": "English", "de": "German" }
+}
+```
+
+Directory structure:
+```
+├── docs/
+│   ├── index.md
+│   ├── en
+│   │   ├── 00_Getting_Started.md
+│   │   ├── 01_Examples
+│   │   │   ├── 01_GitHub_Flavored_Markdown.md
+│   │   │   ├── 05_Code_Highlighting.md
+│   │   ├── 05_More_Examples
+│   │   │   ├── Hello_World.md
+│   │   │   ├── 05_Code_Highlighting.md
+│   ├── de
+│   │   ├── 00_Getting_Started.md
+│   │   ├── 01_Examples
+│   │   │   ├── 01_GitHub_Flavored_Markdown.md
+│   │   │   ├── 05_Code_Highlighting.md
+│   │   ├── 05_More_Examples
+│   │   │   ├── Hello_World.md
+│   │   │   ├── 05_Code_Highlighting.md
 ```
 
 ## Running Remotely
@@ -234,6 +307,22 @@ The Grunt.js task uses the built in web server in PHP 5.4 to host the docs on yo
 
 This project contains a package.json file, so once you have the requirements installed, you can simply run a `npm install` and then `grunt` in the projects folder to start the local web server. By default the server will run at: <a href="http://localhost:8085" target="_blank">http://localhost:8085</a>
 
+## Generating a set of static files
+
+These can be uploaded to a static site hosting service such as pages.github.com
+
+Generating a complete set of pages, with navigation
+
+```bash
+php index.php generate
+```
+
+Generating just one big file with each doc concatenated
+
+```bash
+php index.php full-doc
+```
+
 ## Running on IIS
 
 If you have set up a local or remote IIS web site, you may need a `web.config` with:
@@ -246,7 +335,7 @@ If you have set up a local or remote IIS web site, you may need a `web.config` w
 The `web.config` needs an entry for `<rewrite>` under `<system.webServer>`:
 
 ```xml
-<configuration> 
+<configuration>
 	<system.webServer>
 		<rewrite>
 			<rules>

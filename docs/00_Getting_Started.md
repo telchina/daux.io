@@ -31,9 +31,11 @@ Download this repository as a zip, and unpack. Copy the files to a web server th
 
 ## Folders
 
-The generator will look for folders in the `/docs` folder. Add your folders inside the `/docs` folder. This project contains some example folders and files to get you started.
+By default, the generator will look for folders in the `/docs` folder. Add your folders inside the `/docs` folder. This project contains some example folders and files to get you started.
 
 You can nest folders any number of levels to get the exact structure you want. The folder structure will be converted to the nested navigation.
+
+If you'd prefer to keep your docs somewhere else (like outside of the daux.io root directory) you can specify your docs path in the `config.json` file.
 
 ## Files
 
@@ -79,6 +81,17 @@ Change the title bar in the docs
 ```json
 {
 	"title": "Daux.io"
+}
+```
+
+###Docs Path:
+If you'd prefer to keep your docs outside of the Daux.io directory, you can provide the filepath.
+
+Note: Your `config.json` file will need to remain in `/daux.io/docs`.
+
+```json
+{
+	"docs_path": "../../my_docs"
 }
 ```
 
@@ -158,6 +171,15 @@ Include custom links in the sidebar.
 }
 ```
 
+###File editor:
+Enable front-end Markdown editor. _Disabled by default_.
+
+```json
+{
+	"file_editor": true
+}
+```
+
 ###Google Analytics:
 This will embed the google analytics tracking code.
 
@@ -173,6 +195,14 @@ This will embed the piwik tracking code.
 ```json
 {
 	"piwik_analytics": "my-url-for-piwik.com"
+}
+```
+
+You can Also give a specific Piwik ID as well.
+
+```json
+{
+	"piwik_analytics_id": "43"
 }
 ```
 
@@ -203,7 +233,7 @@ By default, daux.io will display the last modified time as reported by the syste
 ```json
 {
 	"date_modified": false
-} 
+}
 ```
 
 ###Timezone
@@ -234,6 +264,23 @@ The Grunt.js task uses the built in web server in PHP 5.4 to host the docs on yo
 
 This project contains a package.json file, so once you have the requirements installed, you can simply run a `npm install` and then `grunt` in the projects folder to start the local web server. By default the server will run at: <a href="http://localhost:8085" target="_blank">http://localhost:8085</a>
 
+## Generating a set of static files
+
+These can be uploaded to a static site hosting service such as pages.github.com
+
+Generating a complete set of pages, with navigation
+
+```bash
+php index.php generate
+```
+
+Generating just one big file with each doc concatenated
+
+```bash
+php index.php full-doc
+```
+
+
 ## Running on IIS
 
 If you have set up a local or remote IIS web site, you may need a `web.config` with:
@@ -246,7 +293,7 @@ If you have set up a local or remote IIS web site, you may need a `web.config` w
 The `web.config` needs an entry for `<rewrite>` under `<system.webServer>`:
 
 ```xml
-<configuration> 
+<configuration>
 	<system.webServer>
 		<rewrite>
 			<rules>

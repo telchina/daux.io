@@ -255,7 +255,8 @@
     <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- Navigation -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 
     <?php if($options["file_editor"]) { ?>
     <!-- Front end file editor -->

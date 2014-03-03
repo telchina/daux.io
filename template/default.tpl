@@ -81,7 +81,7 @@
                             <?php } ?>
                         <?php } else { ?>
                         <a href="<?php echo $docs_url;?>" class="btn btn-primary btn-hero">
-                            View Documentation
+                            阅读文档
                         </a>
                         <?php } ?>
                     </div>

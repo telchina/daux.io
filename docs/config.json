@@ -5,7 +5,7 @@
 	"image": "img/app.png",
 	"theme": "telchina",
 	"template":"default",
-	"toggle_code": true,
+	"toggle_code": false,
 	"float": false,
 	"date_modified": true,
 	"repo": "",

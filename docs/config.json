@@ -12,9 +12,8 @@
 	"twitter": [],
 	"google_analytics": "UA-12653604-10",
 	"links": {
-		"Download": "https://github.com/justinwalsh/daux.io/archive/master.zip",
-		"GitHub Repo": "https://github.com/justinwalsh/daux.io",
-		"Help/Support/Bugs": "https://github.com/justinwalsh/daux.io/issues",
-		"Made by Todaymade": "http://todaymade.com"
+		  "质量管理部管理体系文件": "http://10.10.50.33/ISO/"
+		, "质量管理部研发管理体系": "http://10.10.50.30/trunk/index.htm"
+		, "质量管理部研发管理文档模板": "http://10.10.50.30/trunk/pages/Page1298.htm"
 	}
 }

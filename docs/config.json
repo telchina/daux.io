@@ -3,7 +3,7 @@
 	"tagline": "The Easiest Way To Document Your Project",
 	"docs_path": "docs",
 	"image": "img/app.png",
-	"theme": "navy",
+	"theme": "telchina",
 	"template":"default",
 	"toggle_code": true,
 	"float": false,

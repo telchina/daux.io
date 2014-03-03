@@ -25,7 +25,8 @@ module.exports = function (grunt) {
                     "css/daux-blue.min.css": "less/daux-blue.less",
                     "css/daux-green.min.css": "less/daux-green.less",
                     "css/daux-navy.min.css": "less/daux-navy.less",
-                    "css/daux-red.min.css": "less/daux-red.less"
+                    "css/daux-red.min.css": "less/daux-red.less",
+                    "css/telchina.css": "less/telchina.less"
                 }
             }
         },

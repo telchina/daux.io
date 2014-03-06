@@ -1,6 +1,6 @@
 {
-	"title": "telChina Documents",
-	"tagline": "telChina Documents",
+	"title": "市政软件产品（项目）标准",
+	"tagline": "数字市政事业部软件产品（项目）标准",
 	"docs_path": "docs",
 	"image": "img/app.png",
 	"theme": "telchina",
@@ -12,5 +12,8 @@
 	"twitter": [],
 	"google_analytics": "UA-12653604-10",
 	"links": {
+		  "质量管理部管理体系文件": "http://10.10.50.33/ISO/"
+		, "质量管理部研发管理体系": "http://10.10.50.30/trunk/index.htm"
+		, "质量管理部研发管理文档模板": "http://10.10.50.30/trunk/pages/Page1298.htm"
 	}
 }

@@ -1,0 +1,3 @@
+Caffeinated JS的核心是一个基于Javascript开发且运行于浏览器端的运行时环境。我们称之为caffeinated-core。它的主要作用是：负责调度各类同步/异步任务执行，加载外部资源以及解析开发者对UI的描述文件并将其渲染为标准的Web页面。
+
+## Caffeinated JS与其他Web应用UI开发技术的比较
